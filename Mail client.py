@@ -19,15 +19,15 @@ hostname = str(input("Enter Hostname or IP: "))
 port = int(input("Enter Port Number: "))
 username = str(input("Enter your username: "))
 password = str(input("Enter your password: "))
-fromadd = str(input("Enter From Address: "))
-toadd = str(input("Enter TO Address: "))
+from_address = str(input("Enter From Address: "))
+to_address = str(input("Enter TO Address: "))
 msg = str(input("Type Your message: "))
 
 
 server = smtplib.SMTP_SSL(hostname, port)
 server.login(username, password)
 server.sendmail(
-    fromadd,
-    toadd,
+    from_address,
+    to_address,
     msg)
 server.quit()
