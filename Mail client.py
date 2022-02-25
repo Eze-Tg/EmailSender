@@ -1,6 +1,7 @@
 import smtplib
 
 print("***MAIL TESTER***")
+print("**Welcome**")
 print("Welcome to SMTP sender Script... \n")
 choice = input("Press 'L' to see list of server host and port numbers or press 'C' to continue: >> ").upper()
 
