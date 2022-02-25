@@ -17,19 +17,22 @@ while True:
         print("Invalid Option, Please choose a valid option.")
         break
 
-hostname = str(input("Enter Hostname or IP: "))
-port = int(input("Enter Port Number: "))
-username = str(input("Enter your username: "))
-password = str(input("Enter your password: "))
-from_address = str(input("Enter From Address: "))
-to_address = str(input("Enter TO Address: "))
-msg = str(input("Type Your message: "))
+hostname = str(input("[+] Enter Hostname or IP: "))
+port = int(input("[+] Enter Port Number: "))
+username = str(input("[+] Enter your username: "))
+password = str(input("[+] Enter your password: "))
+from_address = str(input("[+] Enter From Address: "))
+to_address = str(input("[+] Enter TO Address: "))
+msg = str(input("[+] Type Your message: "))
 
-
-server = smtplib.SMTP_SSL(hostname, port)
-server.login(username, password)
-server.sendmail(
-    from_address,
-    to_address,
-    msg)
-server.quit()
+try:
+    server = smtplib.SMTP_SSL(hostname, port)
+    server.login(username, password)
+    server.sendmail(
+        from_address,
+        to_address,
+        msg)
+    server.quit()
+    print("Email sent")
+except:
+    print("Can't send")
